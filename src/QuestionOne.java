@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class QuestionOne {
     private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ,.";
     public static void main(String[] args) {
+        int[] key = new int[29];
         Scanner scanner = new Scanner(System.in);
 
         // Enter the key for the program
         System.out.println("Enter the key: ");
         String[] input = scanner.nextLine().trim().split("\\s+");
-        int[] key = new int[29];
         for (int i = 0; i < 29; i++) {
             key[i] = Integer.parseInt(input[i]);
         }
@@ -28,7 +28,8 @@ public class QuestionOne {
 
     public static String encrypt(String text, int[] key) {
         StringBuilder sb = new StringBuilder();
-        for (char c : text.toCharArray()) {
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
             // Find the original index of c
             int index = ALPHABET.indexOf(c);
             if (index != -1) {
@@ -49,7 +50,8 @@ public class QuestionOne {
         }
 
         StringBuilder sb = new StringBuilder();
-        for (char c : text.toCharArray()) {
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
             // Find the encrypted index
             int index = ALPHABET.indexOf(c);
             if (index != -1) {
