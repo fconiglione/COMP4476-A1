@@ -17,10 +17,6 @@ public class QuestionThree {
     }
 
     public static void findKey(String p, String c) {
-        // Remove any whitespace
-        p = p.replaceAll("\\s", "");
-        c = c.replaceAll("\\s", "");
-
         int n = p.length();
 
         // Try every possible block size (m)
@@ -73,7 +69,6 @@ public class QuestionThree {
             }
 
             if (possible) {
-                System.out.println("\n--- Attack Successful ---");
                 System.out.println("Value of 'm': " + m);
                 System.out.print("Permutation Key: ");
                 for (int val : key) System.out.print(val + " ");
