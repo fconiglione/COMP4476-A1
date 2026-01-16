@@ -12,7 +12,7 @@ public class QuestionOne {
             key[i] = Integer.parseInt(input[i]);
         }
 
-        System.out.println("\nEnter a paragraph of text: ");
+        System.out.println("\nEnter a paragraph of text (at least 30 words): ");
         String plaintext = scanner.nextLine().toUpperCase();
 
         String ciphertext = encrypt(plaintext, key);
